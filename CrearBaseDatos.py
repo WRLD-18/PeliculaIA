@@ -13,10 +13,8 @@ DIR = "data"
 RATINGS = os.path.join(DIR,"u.data")
 MOVIES = os.path.join(DIR,"u.item")
 
-
-def main():
-
-    #creamos un dataframe de pandas con los ratings:
+def create_rating_dataframe():
+        #creamos un dataframe de pandas con los ratings:
     #Creo un encabezado personalizado para las columnas del dataframe
     ratings_encabezado = ["usuario_id", "pelicula_id", "rating", "timestamp"]
     rating_dataframe =  pd.read_csv(
@@ -25,7 +23,8 @@ def main():
                             names=ratings_encabezado,   # Nombre personalizado para cada columna
                             encoding='latin-1'    # Para evitar errores con acentos/caracteres raros
                         )
-    
+    return rating_dataframe
+def create_movies_dataframe(): 
     movies_encabezado = ["movie_id", "titulo", "fecha_lanzamiento", "video_release_date", "imdb_url"]
     movies_dataframe = pd.read_csv(
                             MOVIES, 
@@ -33,15 +32,6 @@ def main():
                             names=movies_encabezado, 
                             usecols=[0, 1, 2, 3, 4],
                             encoding='latin-1',
-     
-
                         )
-    print("Ratings: ")
-    print(rating_dataframe.head())
-    print("\nMovies: ")
-    print(movies_dataframe.head())
+    return movies_dataframe
 
-
-    
-if __name__ == "__main__":
-    main()
