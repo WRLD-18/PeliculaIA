@@ -18,6 +18,7 @@ def main():
 
     #creamos un dataframe de pandas con los ratings:
     #Creo un encabezado personalizado para las columnas del dataframe
+    #read_csv lo usamos cuando queremos un dataframe a partir de un archivo de texto
     ratings_encabezado = ["usuario_id", "pelicula_id", "rating", "timestamp"]
     rating_dataframe =  pd.read_csv(
                             RATINGS,         # Ruta del archivo, por ejemplo 'data/u.data'

@@ -25,7 +25,7 @@ def create_rating_dataframe():
                         )
     return rating_dataframe
 def create_movies_dataframe(): 
-    movies_encabezado = ["movie_id", "titulo", "fecha_lanzamiento", "video_release_date", "imdb_url"]
+    movies_encabezado = ["pelicula_id", "titulo", "fecha_lanzamiento", "video_release_date", "imdb_url"]
     movies_dataframe = pd.read_csv(
                             MOVIES, 
                             sep='|', #u.item esta separado por '|' no por tabs como el u.data
